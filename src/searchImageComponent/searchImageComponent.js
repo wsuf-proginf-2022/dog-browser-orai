@@ -1,26 +1,10 @@
 import '../css/searchImageComponent.css';
+import ContentComponent from '../contentComponent/contentComponent.js';
 
-class SearchImage {
+class SearchImage extends ContentComponent {
   constructor() {
+    super();
     this.render();
-  }
-
-  displayError(message) {
-    this.clearErrors();
-    const popupMessage = document.createElement('h2');
-    popupMessage.classList.add('error-message');
-    popupMessage.textContent = message;
-    document.querySelector('.errors').appendChild(popupMessage);
-  }
-
-  clearErrors() {
-    const errors = document.querySelector('.errors');
-    errors.innerHTML = '';
-  }
-
-  clearContent() {
-    const errors = document.querySelector('#content');
-    errors.innerHTML = '';
   }
 
   async getImages(dogBreed) {
